@@ -1,13 +1,13 @@
 %define name	manslide
 %define origname	Manslide
-%define	version	1.5.7
+%define	version	1.5.9
 %define	release	%mkrel 1
 
 Name:		%{name}
 Summary:	Graphical slideshow creation program
 Version:	%{version} 
 Release:	%{release} 
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 URL:		http://www.kde-apps.org/content/show.php/Manslide?content=52227
 Group:		Graphics
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -43,11 +43,11 @@ Encoding=UTF-8
 Name=Manslide
 Comment=Slideshow generator
 Exec=%{_bindir}/%{name} 
-Icon=%{name}
+Icon=image_processing_section.png
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Graphics;Qt;Photography;X-MandrivaLinux-Multimedia-Graphics;
+Categories=Graphics;Qt;Photography;
 EOF
 
 %post
