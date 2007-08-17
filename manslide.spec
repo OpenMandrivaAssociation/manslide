@@ -1,7 +1,7 @@
-%define name	manslide
+%define name		manslide
 %define origname	Manslide
-%define	version	1.5.9
-%define	release	%mkrel 1
+%define	version		1.6
+%define	release		%mkrel 1
 
 Name:		%{name}
 Summary:	Graphical slideshow creation program
@@ -11,7 +11,7 @@ Source0:	%{name}-%{version}.tar.gz
 URL:		http://www.kde-apps.org/content/show.php/Manslide?content=52227
 Group:		Graphics
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-License:	GPL
+License:	GPLv2+
 
 BuildRequires:	libqt4-devel
 Requires:	sox
@@ -43,7 +43,7 @@ Encoding=UTF-8
 Name=Manslide
 Comment=Slideshow generator
 Exec=%{_bindir}/%{name} 
-Icon=image_processing_section.png
+Icon=image_processing_section
 Terminal=false
 Type=Application
 StartupNotify=true
