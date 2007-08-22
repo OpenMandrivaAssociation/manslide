@@ -1,7 +1,7 @@
 %define name		manslide
 %define origname	Manslide
 %define	version		1.6
-%define	release		%mkrel 1
+%define	release		%mkrel 2
 
 Name:		%{name}
 Summary:	Graphical slideshow creation program
@@ -33,8 +33,16 @@ CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" %make
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_datadir}/%{name}
 mkdir -p %{buildroot}%{_bindir}
-install Manslide %{buildroot}%{_bindir}/manslide
+
+install -m 755 Manslide %{buildroot}%{_datadir}/%{name}/%{name}
+install -m 644 *.qm %{buildroot}%{_datadir}/%{name}/
+install -m 644 *.ts %{buildroot}%{_datadir}/%{name}/
+cp -R Interface %{buildroot}%{_datadir}/%{name}/
+cp -R Effects %{buildroot}%{_datadir}/%{name}/
+cp -R Luma %{buildroot}%{_datadir}/%{name}/
+ln -s %{_datadir}/%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
@@ -61,5 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
+%{_datadir}/%{name}
 %{_bindir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
