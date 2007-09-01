@@ -1,7 +1,7 @@
 %define name		manslide
 %define origname	Manslide
-%define	version		1.6
-%define	release		%mkrel 2
+%define	version		1.7
+%define	release		%mkrel 1
 
 Name:		%{name}
 Summary:	Graphical slideshow creation program
