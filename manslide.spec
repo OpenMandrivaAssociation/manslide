@@ -1,6 +1,6 @@
 %define name		manslide
 %define origname	Manslide
-%define	version		1.7
+%define	version		1.7.2
 %define	release		%mkrel 1
 
 Name:		%{name}
@@ -40,8 +40,7 @@ install -m 755 Manslide %{buildroot}%{_datadir}/%{name}/%{name}
 install -m 644 *.qm %{buildroot}%{_datadir}/%{name}/
 install -m 644 *.ts %{buildroot}%{_datadir}/%{name}/
 cp -R Interface %{buildroot}%{_datadir}/%{name}/
-cp -R Effects %{buildroot}%{_datadir}/%{name}/
-cp -R Luma %{buildroot}%{_datadir}/%{name}/
+cp -R BIB_ManSlide %{buildroot}%{_datadir}/%{name}/
 ln -s %{_datadir}/%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
