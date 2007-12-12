@@ -25,7 +25,7 @@ produce attractive slideshows with optional background music. Manslide
 uses the QT4 toolkit.
 
 %prep
-%setup -q -n %origname-%version
+%setup -q -n %name-%version
 
 %build
 PATH=/usr/lib/qt4/bin:$PATH qmake
