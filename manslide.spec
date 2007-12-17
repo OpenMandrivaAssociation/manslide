@@ -10,7 +10,6 @@ Release:	%{release}
 Source0:	http://csgib36.ifrance.com/Manslide/%{name}-%{version}.tar.gz
 URL:		http://www.kde-apps.org/content/show.php/Manslide?content=52227
 Group:		Graphics
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 
 BuildRequires:	libqt4-devel
