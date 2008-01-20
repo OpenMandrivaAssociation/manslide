@@ -1,13 +1,13 @@
 %define name		manslide
 %define origname	Manslide
-%define	version		1.9.6
+%define	version		1.9.7
 %define	release		%mkrel 1
 
 Name:		%{name}
 Summary:	Graphical slideshow creation program
 Version:	%{version} 
 Release:	%{release} 
-Source0:	http://csgib36.ifrance.com/Manslide/%{name}-%{version}.tar.gz
+Source0:	http://csgib36.ifrance.com/Manslide/%{origname}-%{version}.tar.gz
 URL:		http://www.kde-apps.org/content/show.php?content=72739
 Group:		Graphics
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
