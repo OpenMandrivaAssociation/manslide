@@ -53,7 +53,7 @@ Icon=image_processing_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Graphics;Qt;Photography;
+Categories=Graphics;Qt;Photography;X-MandrivaLinux-CrossDesktop;
 EOF
 
 %post
