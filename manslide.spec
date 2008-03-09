@@ -1,6 +1,6 @@
 %define name		manslide
 %define origname	Manslide
-%define	version		2.0.2
+%define	version		2.0.3
 %define	release		%mkrel 1
 
 Name:		%{name}
