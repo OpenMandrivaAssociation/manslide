@@ -1,7 +1,7 @@
 %define name		manslide
 %define origname	Manslide
 %define	version		2.0.3
-%define	release		%mkrel 3
+%define	release		%mkrel 4
 
 Name:		%{name}
 Summary:	Graphical slideshow creation program
@@ -28,8 +28,8 @@ uses the QT4 toolkit.
 %setup -q -n %name-%version
 
 %build
-PATH=/usr/lib/qt4/bin:$PATH qmake
-CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" %make
+%qmake_qt4
+%make
 
 %install
 rm -rf %{buildroot}
