@@ -15,7 +15,7 @@ License:	GPLv2+
 
 BuildRequires:	libqt4-devel
 Requires:	sox
-Requires:	ImageMagick
+Requires:	imagemagick
 Requires:	mencoder
 Requires:	mplayer
 
