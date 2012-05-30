@@ -7,7 +7,7 @@ URL:		http://www.kde-apps.org/content/show.php?content=72739
 Group:		Graphics
 License:	GPLv2+
 
-BuildRequires:	libqt4-devel
+BuildRequires:	qt4-devel
 Requires:	sox
 Requires:	imagemagick
 Requires:	mencoder
