@@ -1,16 +1,10 @@
-%define name		manslide
-%define origname	Manslide
-%define	version		2.0.3
-%define	release		%mkrel 5
-
-Name:		%{name}
+Name:		manslide
 Summary:	Graphical slideshow creation program
-Version:	%{version}
-Release:	%{release}
+Version:	2.0.3
+Release:	5
 Source0:	http://www.mandrivalinux-online.eu/%{name}/%{name}-%{version}.tar.gz
 URL:		http://www.kde-apps.org/content/show.php?content=72739
 Group:		Graphics
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 
 BuildRequires:	libqt4-devel
@@ -25,26 +19,23 @@ produce attractive slideshows with optional background music. Manslide
 uses the QT4 toolkit.
 
 %prep
-%setup -q -n %name-%version
+%setup -q
 
 %build
 %qmake_qt4
 %make
 
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_datadir}/%{name}
-mkdir -p %{buildroot}%{_bindir}
-
-install -m 755 Manslide %{buildroot}%{_datadir}/%{name}/%{name}
-install -m 644 *.qm %{buildroot}%{_datadir}/%{name}/
-install -m 644 *.ts %{buildroot}%{_datadir}/%{name}/
+install -m755 Manslide -D %{buildroot}%{_datadir}/%{name}/%{name}
+install -m644 *.qm %{buildroot}%{_datadir}/%{name}/
+install -m644 *.ts %{buildroot}%{_datadir}/%{name}/
 cp -R Interface %{buildroot}%{_datadir}/%{name}/
 cp -R BIB_ManSlide %{buildroot}%{_datadir}/%{name}/
+install -d %{buildroot}%{_bindir}
 ln -s %{_datadir}/%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
+install -d %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop <<EOF
 [Desktop Entry]
 Name=Manslide
 Comment=Slideshow generator
@@ -56,21 +47,7 @@ StartupNotify=true
 Categories=Graphics;Qt;Photography;X-MandrivaLinux-CrossDesktop;
 EOF
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %{_datadir}/%{name}
 %{_bindir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
