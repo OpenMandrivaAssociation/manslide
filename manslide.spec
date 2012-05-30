@@ -20,6 +20,8 @@ uses the QT4 toolkit.
 
 %prep
 %setup -q
+moc mainfrm.h > moc_mainfrm.cpp
+moc tetrahedron.h > moc_tetrahedron.cpp
 
 %build
 %qmake_qt4
